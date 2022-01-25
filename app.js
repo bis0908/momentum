@@ -1,20 +1,12 @@
-const title = document.querySelector("div.hello:first-child h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-console.dir(title);
-
-function handleTitleClick() {
-    title.style.color = "blue";
+function onLoginSubmit(event) {
+    event.preventDefault();
+    // preventDefault: 어떤 event의 기본 행동을 수행하지 않도록 막아준다
+    // const username = loginInput.value;
+    console.log(loginInput);
 }
 
-function handleMouseEnter() {
-    // console.log("mouse is here!");
-    title.innerText = "mouse is here";
-}
-
-function handleMouseLeave() {
-    title.innerText = "mouse is gone!";
-}
-
-title.addEventListener("click", handleTitleClick);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
+loginForm.addEventListener("submit", onLoginSubmit);
